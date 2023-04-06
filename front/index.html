@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-controller="myController">
+    <div class="container">
+        <div class="form-add">
+          <h1>Add products</h1>
+          <form >
+            <p>Ma</p>
+          <input type="text" name="id" ng-model="request.ma" />
+         
+          <p>Tên</p>
+          <input type="text" name="ten" ng-model="request.ten" />
+          <p>Tuổi</p>
+          <input type="text" name="tuoi" ng-model="request.tuoi" />
+          <p>Địa chỉ</p>
+          <input type="text" name="diaChi" ng-model="request.diaChi" />
+          <a href="#" ng-click="addSinhVien()"> <button> Add product</button></a> <br> <br>
+          <a href="#" ng-click="updateSinhVien()"> <button> Update Category product</button></a>
+        </div>
+          <div class="table-product">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">ma</th>
+                    <th scope="col">ten</th>
+                    <th scope="col">tuoi</th>
+                    <th scope="col">diaChi</th>
+                    <th scope="col">chuc nang</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="sp in list">
+                  <td>{{$index +1}}</td>
+                    <td>{{sp.id}}</td>
+                    <td>{{sp.ma}}</td>
+                    <td>{{sp.ten}}</td>
+                    <td>{{sp.tuoi}}</td>
+                    <td>{{sp.diaChi}}</td>
+                    <td>
+                        <a href="#" ng-click="detailSinhVien($event,$index)"><button>Xem</button></a>
+                        <a href="#" ng-click="removeSinhVien($event,$index)"><button>Xóa</button></a>
+                       
+                    </td>
+                  
+                  </tr>
+                  
+                </tbody>
+              </table>
+          </div>
+          <script src="../front/lib/angular.js"></script>
+          <script src="index.js"></script>
+</body>
+</html>
